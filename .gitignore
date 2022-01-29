@@ -9,3 +9,7 @@
 /vendor/
 ###< symfony/framework-bundle ###
 /.idea/
+
+.idea
+
+.env
