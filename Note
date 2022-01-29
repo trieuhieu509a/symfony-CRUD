@@ -1,0 +1,21 @@
+============================================= Install symfony ==========================
+composer create-project symfony/skeleton project-name "4.2.*"
+
+============================================= Virtual hosts ==========================
+<VirtualHost *:80>
+    ServerName symfony.crud
+    ServerAlias www.symfony.crud
+    DocumentRoot /var/www/html/course/symfony-crud/public/
+
+    <Directory /var/www/html/course/symfony-crud/public>
+        AllowOverride All
+        Order Allow,Deny
+        Allow from All
+        Require all granted
+        # Copy .htaccess contents here
+        RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+    </Directory>
+
+    ErrorLog /var/log/apache2/symfony_crud_error.log
+    CustomLog /var/log/apache2/symfony_crud_access.log combined
+</VirtualHost>
