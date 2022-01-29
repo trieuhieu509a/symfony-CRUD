@@ -19,3 +19,10 @@ composer create-project symfony/skeleton project-name "4.2.*"
     ErrorLog /var/log/apache2/symfony_crud_error.log
     CustomLog /var/log/apache2/symfony_crud_access.log combined
 </VirtualHost>
+============================================= install first controller ==========================
+composer require symfony/maker-bundle --dev
+composer require doctrine/annotations // for routing
+bin/console make:controller ToDoListController
+
+composer require symfony/apache-pack // create htaccess
+composer require twig
