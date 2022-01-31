@@ -26,3 +26,9 @@ bin/console make:controller ToDoListController
 
 composer require symfony/apache-pack // create htaccess
 composer require twig
+============================================= make entity ==========================
+composer require doctrine
+bin/console doctrine:database:create
+bin/console make:entity > Task
+bin/console make:migration
+bin/console doctrine:migrations:migrate
